@@ -8,20 +8,25 @@ function clearMessages(){
 	document.getElementById('messages').innerHTML = '';
 }
 
+function assignValue(gameInput) {
+    let gameValue = '';
+    if (gameInput==1) {
+        gameValue = 'kamień';
+    } else if (gameInput==2) {
+        gameValue = 'papier';
+    } else if (gameInput==3) {
+        gameValue = 'nożyce';
+    } else {
+        gameValue = 'error';
+    }
+    return(gameValue)
+}
+
 function getRandomNumber() {
     let randomNumber = 0;
     let computerMove = '';
-    randomNumber = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
-    if (randomNumber==1) {
-        computerMove = 'kamień';
-    } else if (randomNumber==2) {
-        computerMove = 'papier';
-    } else if (randomNumber==3) {
-        computerMove = 'nożyce';
-    } else {
-        computerMove = 'error';
-    }
-    return(computerMove);
+    randomNumber = Math.floor(Math.random() * (3 - 1 + 1)) + 1;    
+    return(assignValue(randomNumber));
 }
 
 function getPlayerNumber() {
@@ -36,16 +41,7 @@ function getPlayerNumber() {
         };
        playerInput = prompt(msg);
     }
-    if (playerInput == '1') {
-        playerInput = 'kamień';
-    } else if (playerInput == '2') {
-        playerInput = 'papier';
-    } else if (playerInput == '3') {
-        playerInput = 'nożyce';
-    } else {   
-        playerInput = 'error';
-    }
-    return(playerInput);
+    return(assignValue(playerInput));
 }
 
 function getResult() {

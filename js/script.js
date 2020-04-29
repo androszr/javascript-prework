@@ -2,13 +2,12 @@ let computerMove = getRandomNumber();
 let playerInput = getPlayerNumber();
 let result = getResult();
 
-printMessage('<p>Ty zagrałeś <strong>' + playerInput + '</strong></p>'); 
-printMessage('<p>Komputer zagrał <strong>' + computerMove + '</strong></p>'); 
+printMessage('<p>Ty zagrałeś <strong>' + playerInput + '</strong></p> <p>Komputer zagrał <strong>' + computerMove + '</strong></p>'); 
 if (result == 'remis') {
     printMessage('Mamy remis! Zagraj jeszcze raz.');
 } else if (result == 'error') {
     printMessage('Błąd gry! Spróbuj ponownie.');
 } else {
-    printMessage('<h1>Wygrywa <strong>' + result + '!</strong></h1>');
+    printMessage('<h1>Wygrywa <strong>' + result + '!</strong></h1><p><a id="restart" href="#">Zagraj jeszcze raz</a></p>');
 }
  
