@@ -1,13 +1,14 @@
+const gameOptions = document.querySelectorAll('.play-button');
+let player = '';
+gameOptions.forEach(el => el.addEventListener('click', event => {
+  console.log(el.id);
+  if (el.id == 'stone') {
+    player = 'kamień';
+  } else if (el.id == 'paper') {
+    player = 'papier';
+  } else if (el.id == 'scissors') {
+    player = 'nożyce';
+  }
+  playGame(player);
+}));
 
-let computerMove = getRandomNumber();
-let playerInput = getPlayerNumber();
-let result = getResult(playerInput, computerMove);
-
-printMessage('<p>Ty zagrałeś <strong>' + playerInput + '</strong></p> <p>Komputer zagrał <strong>' + computerMove + '</strong></p>'); 
-if (result == 'remis') {
-    printMessage('Mamy remis! Zagraj jeszcze raz.');
-} else if (result == 'error') {
-    printMessage('Błąd gry! Spróbuj ponownie.');
-} else {
-    printMessage('<h1>Wygrywa <strong>' + result + '!</strong></h1>');
-}

@@ -8,6 +8,21 @@ function clearMessages(){
 	document.getElementById('messages').innerHTML = '';
 }
 
+function playGame(player){
+    let computer = getRandomNumber();
+    let result = getResult(player, computer);
+    document.getElementById('buttons').style.display = 'none';
+    printMessage('<p>Ty zagrałeś <strong>' + player + '</strong></p> <p>Komputer zagrał <strong>' + computer + '</strong></p>'); 
+    if (result == 'remis') {
+        printMessage('Mamy remis! Zagraj jeszcze raz.');
+    } else if (result == 'error') {
+        printMessage('Błąd gry! Spróbuj ponownie.');
+    } else {
+        printMessage('<h1>Wygrywa <strong>' + result + '!</strong></h1>');
+    }
+
+};
+
 function assignValue(gameInput) {
     if (gameInput==1) {
         return 'kamień';
@@ -27,7 +42,8 @@ function getRandomNumber() {
     return(assignValue(randomNumber));
 }
 
-function getPlayerNumber() {
+    /*
+    function getPlayerNumber() {
     let msg = '';
     let playerInput = '';
     while (playerInput !== '1' && playerInput !== '2' && playerInput !== '3') {
@@ -39,8 +55,10 @@ function getPlayerNumber() {
         };
        playerInput = prompt(msg);
     }
-    return(assignValue(playerInput));
-}
+    return(assignValue(playerInput)); 
+    }
+    */
+
 
 function getResult(player, computer) {
     let result = '';
@@ -83,6 +101,7 @@ function getResult(player, computer) {
 
 let button = document.getElementById('restart-button');
 button.addEventListener('click',function(e){
+    event.preventDefault()
     button.disabled = 'true';
     location.reload();
-},false);
+});

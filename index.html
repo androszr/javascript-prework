@@ -3,17 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Kamień, papier, nożyce</title>
+    <title>Kamień, papier, nożyce</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap-grid/bootstrap-grid.min.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<div class="container">
-		<div id="buttons"></div>
-        <div id="messages"></div>
-        <div id="restart" style="display: none;">
-            <p><a id="restart-button" href="#">Zagraj jeszcze raz</a></p>
+    <section class="game">
+        <div class="container">
+            <h1>Gra Kamień, papier, nożyczki</h1>
+            <p>Zagraj w grę wybierając jedną z opcji poniżej:</p>
+            <div id="buttons">
+                <a href="#" class="play-button" id="stone"><i class="fas fa-stop"></i>Kamień</a>
+                <a href="#" class="play-button" id="paper"><i class="fas fa-toilet-paper"></i>Papier</a>
+                <a href="#" class="play-button" id="scissors"><i class="fas fa-cut"></i>Nożyczki</a>
+            </div>
+            <div id="messages"></div>
+            <div id="restart" style="display: none;">
+                <p><a id="restart-button" href="#">Zagraj jeszcze raz</a></p>
+            </div>
         </div>
-	</div>
+    </section>
 	<script src="js/functions.js"></script>
 	<script src="js/script.js"></script>
 </body>
