@@ -39,7 +39,7 @@ function getRandomNumber() {
     let randomNumber = 0;
     let computerMove = '';
     randomNumber = Math.floor(Math.random() * (3 - 1 + 1)) + 1;    
-    return(assignValue(randomNumber));
+    return assignValue(randomNumber);
 }
 
     /*
@@ -61,7 +61,6 @@ function getRandomNumber() {
 
 
 function getResult(player, computer) {
-    let result = '';
     document.getElementById('restart').style.display = 'block';
     if (player == 'kamień') {
         if (computer == 'kamień') {
