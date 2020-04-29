@@ -1,6 +1,7 @@
 const gameOptions = document.querySelectorAll('.play-button');
 gameOptions.forEach(el => el.addEventListener('click', event => {
   console.log(el.id);
+  let player ='';
   if (el.id == 'stone') {
     player = 'kamień';
   } else if (el.id == 'paper') {

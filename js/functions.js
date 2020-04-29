@@ -36,7 +36,7 @@ function assignValue(gameInput) {
 }
 
 function getRandomNumber() {
-    randomNumber = Math.floor(Math.random() * (3 - 1 + 1)) + 1;    
+    let randomNumber = Math.floor(Math.random() * (3 - 1 + 1)) + 1;    
     return assignValue(randomNumber);
 }
 
