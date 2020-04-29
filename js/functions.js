@@ -36,8 +36,6 @@ function assignValue(gameInput) {
 }
 
 function getRandomNumber() {
-    let randomNumber = 0;
-    let computerMove = '';
     randomNumber = Math.floor(Math.random() * (3 - 1 + 1)) + 1;    
     return assignValue(randomNumber);
 }
