@@ -15,6 +15,11 @@ section {
   margin: 40px 0 40px;
 }
 
+h1 {
+  margin-bottom: 20px;
+  color: #FED136;
+}
+
 .splash {
   max-width: 500px;
   margin: 0 auto;
@@ -36,8 +41,7 @@ section {
 }
 
 .splash .splash-header {
-  margin: 0 auto;
-  margin-top: 50px;
+  margin: 50px auto;
   width: 90%;
   height: 10vh;
   position: relative;
@@ -47,7 +51,7 @@ section {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  max-height: 100%;
+  max-height: 80%;
   max-width: 100%;
 }
 
@@ -57,10 +61,6 @@ section {
 
 .splash .splash-content p {
   margin-bottom: 10px;
-}
-
-.splash .splash-content h1 {
-  margin-bottom: 20px;
 }
 
 .splash .splash-content #buttons {
@@ -79,6 +79,7 @@ section {
 .splash .splash-content #buttons a i {
   display: block;
   margin-bottom: 5px;
+  color: #FED136;
 }
 
 .splash .splash-content #buttons .row {
@@ -99,6 +100,7 @@ section {
   margin-bottom: 10px;
   display: block;
   transition: transform .8s ease-in-out;
+  color: #FED136;
 }
 
 .splash .splash-content #restart a i:hover {
