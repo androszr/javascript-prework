@@ -8,6 +8,6 @@ if (result == 'remis') {
 } else if (result == 'error') {
     printMessage('Błąd gry! Spróbuj ponownie.');
 } else {
-    printMessage('<h1>Wygrywa <strong>' + result + '!</strong></h1><p><a id="restart" href="#">Zagraj jeszcze raz</a></p>');
+    printMessage('<h1>Wygrywa <strong>' + result + '!</strong></h1>');
 }
  

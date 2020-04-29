@@ -82,3 +82,9 @@ function getResult() {
     }
     return(result);
 }
+
+let button = document.getElementById("restart-button");
+button.addEventListener("click",function(e){
+    button.disabled = "true";
+    location.reload();
+},false);
