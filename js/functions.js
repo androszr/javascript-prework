@@ -9,17 +9,15 @@ function clearMessages(){
 }
 
 function assignValue(gameInput) {
-    let gameValue = '';
     if (gameInput==1) {
-        gameValue = 'kamień';
+        return 'kamień';
     } else if (gameInput==2) {
-        gameValue = 'papier';
+        return 'papier';
     } else if (gameInput==3) {
-        gameValue = 'nożyce';
+        return 'nożyce';
     } else {
-        gameValue = 'error';
+        return 'error';
     }
-    return(gameValue)
 }
 
 function getRandomNumber() {
@@ -46,45 +44,45 @@ function getPlayerNumber() {
 
 function getResult() {
     let result = '';
+    document.getElementById('restart').style.display = 'block';
     if (playerInput == 'kamień') {
         if (computerMove == 'kamień') {
-            result = 'remis';
+            return 'remis';
         } else if (computerMove == 'papier') {
-            result = 'Komputer';
+            return 'Komputer';
         } else if (computerMove == 'nożyce') {
-            result = 'Gracz';
+            return 'Gracz';
         } else {
-            result = 'error';
+            return 'error';
         }
     } else if (playerInput == 'papier') {
         if (computerMove == 'kamień') {
-            result = 'Gracz';
+            return 'Gracz';
         } else if (computerMove == 'papier') {
-            result = 'remis';
+            return 'remis';
         } else if (computerMove == 'nożyce') {
-            result = 'Komputer';
+            return 'Komputer';
         } else {
-            result = 'error';
+            return 'error';
         }
 
     } else if (playerInput == 'nożyce') {
         if (computerMove == 'kamień') {
-            result = 'Komputer';
+            return 'Komputer';
         } else if (computerMove == 'papier') {
-            result = 'Gracz';
+            return 'Gracz';
         } else if (computerMove == 'nożyce') {
-            result = 'remis';
+            return 'remis';
         } else {
-            result = 'error';
+            return 'error';
         }
     } else {
-        result = 'error';
+        return 'error';
     }
-    return(result);
 }
 
-let button = document.getElementById("restart-button");
-button.addEventListener("click",function(e){
-    button.disabled = "true";
+let button = document.getElementById('restart-button');
+button.addEventListener('click',function(e){
+    button.disabled = 'true';
     location.reload();
 },false);

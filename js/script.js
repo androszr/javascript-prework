@@ -1,3 +1,4 @@
+
 let computerMove = getRandomNumber();
 let playerInput = getPlayerNumber();
 let result = getResult();
@@ -10,4 +11,3 @@ if (result == 'remis') {
 } else {
     printMessage('<h1>Wygrywa <strong>' + result + '!</strong></h1>');
 }
- 
