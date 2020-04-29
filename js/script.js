@@ -1,7 +1,7 @@
 
 let computerMove = getRandomNumber();
 let playerInput = getPlayerNumber();
-let result = getResult();
+let result = getResult(playerInput, computerMove);
 
 printMessage('<p>Ty zagrałeś <strong>' + playerInput + '</strong></p> <p>Komputer zagrał <strong>' + computerMove + '</strong></p>'); 
 if (result == 'remis') {

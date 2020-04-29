@@ -42,36 +42,36 @@ function getPlayerNumber() {
     return(assignValue(playerInput));
 }
 
-function getResult() {
+function getResult(player, computer) {
     let result = '';
     document.getElementById('restart').style.display = 'block';
-    if (playerInput == 'kamień') {
-        if (computerMove == 'kamień') {
+    if (player == 'kamień') {
+        if (computer == 'kamień') {
             return 'remis';
-        } else if (computerMove == 'papier') {
+        } else if (computer == 'papier') {
             return 'Komputer';
-        } else if (computerMove == 'nożyce') {
+        } else if (computer == 'nożyce') {
             return 'Gracz';
         } else {
             return 'error';
         }
-    } else if (playerInput == 'papier') {
-        if (computerMove == 'kamień') {
+    } else if (player == 'papier') {
+        if (computer == 'kamień') {
             return 'Gracz';
-        } else if (computerMove == 'papier') {
+        } else if (computer == 'papier') {
             return 'remis';
-        } else if (computerMove == 'nożyce') {
+        } else if (computer == 'nożyce') {
             return 'Komputer';
         } else {
             return 'error';
         }
 
-    } else if (playerInput == 'nożyce') {
-        if (computerMove == 'kamień') {
+    } else if (player == 'nożyce') {
+        if (computer == 'kamień') {
             return 'Komputer';
-        } else if (computerMove == 'papier') {
+        } else if (computer == 'papier') {
             return 'Gracz';
-        } else if (computerMove == 'nożyce') {
+        } else if (computer == 'nożyce') {
             return 'remis';
         } else {
             return 'error';
