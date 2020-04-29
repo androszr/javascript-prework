@@ -14,7 +14,7 @@ function playGame(player){
     document.getElementById('buttons').style.display = 'none';
     printMessage('<p>Ty zagrałeś <strong>' + player + '</strong></p> <p>Komputer zagrał <strong>' + computer + '</strong></p>'); 
     if (result == 'remis') {
-        printMessage('Mamy remis! Zagraj jeszcze raz.');
+        printMessage('<p>Mamy remis! Zagraj jeszcze raz.</p>');
     } else if (result == 'error') {
         printMessage('Błąd gry! Spróbuj ponownie.');
     } else {
@@ -98,7 +98,8 @@ function getResult(player, computer) {
 
 let button = document.getElementById('restart-button');
 button.addEventListener('click',function(e){
-    event.preventDefault()
-    button.disabled = 'true';
-    location.reload();
+    event.preventDefault();
+    clearMessages();
+    document.getElementById('restart').style.display = 'none';
+    document.getElementById('buttons').style.display = 'block';
 });
