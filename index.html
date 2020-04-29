@@ -11,18 +11,29 @@
 <body>
     <section class="game">
         <div class="container">
-            <h1>Gra Kamień, papier, nożyczki</h1>
-            <p>Zagraj w grę wybierając jedną z opcji poniżej:</p>
-            <div id="buttons">
-                <a href="#" class="play-button" id="stone"><i class="fas fa-stop"></i>Kamień</a>
-                <a href="#" class="play-button" id="paper"><i class="fas fa-toilet-paper"></i>Papier</a>
-                <a href="#" class="play-button" id="scissors"><i class="fas fa-cut"></i>Nożyczki</a>
-            </div>
-            <div id="messages"></div>
-            <div id="restart" style="display: none;">
-                <p><a id="restart-button" href="#">Zagraj jeszcze raz</a></p>
+            <div class="splash">
+                <div class="splash-header">
+                   <img id="img-header" src="images/background-3.png" alt="background image"/>
+                </div>
+                <div class="splash-content">   
+                    <div id="buttons">
+                        <h1>Gra kamień, papier, nożyczki</h1>
+                        <p>Zagraj w grę wybierając jedną z opcji poniżej:</p>
+                        <div class="row">
+                            <div class="col-4"><a href="#" class="play-button" id="stone"><i class="fas fa-stop"></i>Kamień</a></div>
+                            <div class="col-4"><a href="#" class="play-button" id="paper"><i class="fas fa-toilet-paper"></i>Papier</a></div>
+                            <div class="col-4"><a href="#" class="play-button" id="scissors"><i class="fas fa-cut"></i>Nożyczki</a></div>
+                        </div>
+                    </div>
+                    <div id="messages"></div>
+                    <div id="restart" style="display: none;">
+                        <p><a id="restart-button" href="#"><i class="fas fa-sync"></i> Zagraj jeszcze raz</a></p>
+                    </div>
+                </div>
             </div>
         </div>
+        
+        
     </section>
 	<script src="js/functions.js"></script>
 	<script src="js/script.js"></script>

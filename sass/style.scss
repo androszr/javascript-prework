@@ -1,0 +1,110 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Colors */ 
+
+$color-one: #FED136;
+$color-two: #3B5998;
+$color-light:#FFFFFF;
+$color-dark: #000000;
+$color-gray: #777777;
+$color-gray-background: #F7F7F7;
+
+body {
+    font-size: 16px;
+    color: $color-light;
+    background-color: $color-light;
+
+}
+section {
+        margin: 40px 0 40px;
+
+}
+.splash {
+    max-width: 500px;
+    margin: 0 auto;
+    min-height: 60vh;
+    background-color: $color-dark;
+    color: $color-light;
+    text-align: center;
+    padding-top: 10px;
+    box-shadow: 0 8px 6px -6px black;
+    border-radius: 10px;
+    transition: border-radius 0.5s, border 2s, outline 2s, box-shadow 2s;
+        &:hover {
+            border: 5px solid hsl(0, 0%, 40%);
+            outline: 5px solid hsl(0, 0%, 60%);
+            box-shadow:
+                0 0 0 10px hsl(0, 0%, 80%),
+                0 0 0 15px hsl(0, 0%, 90%);
+            border-radius: 0px;
+        }
+
+
+    .splash-header {
+        margin: 0 auto;
+        margin-top: 50px;
+        width: 90%;
+        height: 10vh;   
+        position: relative;
+        #img-header {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-height: 100%;
+            max-width: 100%;
+        }
+    }
+    .splash-content {
+        margin-top: 20px;
+        p {
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+        #buttons {
+            text-align: center;
+            width: 90%;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            a {
+                color: $color-light;
+                text-decoration: none;
+                font-size: 20px;
+                
+                i {
+                    display: block;
+                    margin-bottom: 5px;
+                }
+            }
+            .row {
+                margin-top: 40px;
+            }
+        }
+        #restart {
+            margin-top: 50px;
+            a {
+                color: $color-light;
+                text-decoration: none;
+                font-size: 20px;
+                i {
+                    margin-bottom: 10px;
+                    display: block;
+                    transition: transform .8s ease-in-out;
+                    &:hover {
+                        transform: rotate(360deg);
+                    }
+                }
+                
+            }
+            
+        }
+        
+    }
+}
+    

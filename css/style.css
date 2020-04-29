@@ -1,0 +1,107 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Colors */
+body {
+  font-size: 16px;
+  color: #FFFFFF;
+  background-color: #FFFFFF;
+}
+
+section {
+  margin: 40px 0 40px;
+}
+
+.splash {
+  max-width: 500px;
+  margin: 0 auto;
+  min-height: 60vh;
+  background-color: #000000;
+  color: #FFFFFF;
+  text-align: center;
+  padding-top: 10px;
+  box-shadow: 0 8px 6px -6px black;
+  border-radius: 10px;
+  transition: border-radius 0.5s, border 2s, outline 2s, box-shadow 2s;
+}
+
+.splash:hover {
+  border: 5px solid #666666;
+  outline: 5px solid #999999;
+  box-shadow: 0 0 0 10px #cccccc, 0 0 0 15px #e6e6e6;
+  border-radius: 0px;
+}
+
+.splash .splash-header {
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 90%;
+  height: 10vh;
+  position: relative;
+}
+
+.splash .splash-header #img-header {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.splash .splash-content {
+  margin-top: 20px;
+}
+
+.splash .splash-content p {
+  margin-bottom: 10px;
+}
+
+.splash .splash-content h1 {
+  margin-bottom: 20px;
+}
+
+.splash .splash-content #buttons {
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.splash .splash-content #buttons a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.splash .splash-content #buttons a i {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.splash .splash-content #buttons .row {
+  margin-top: 40px;
+}
+
+.splash .splash-content #restart {
+  margin-top: 50px;
+}
+
+.splash .splash-content #restart a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.splash .splash-content #restart a i {
+  margin-bottom: 10px;
+  display: block;
+  transition: transform .8s ease-in-out;
+}
+
+.splash .splash-content #restart a i:hover {
+  transform: rotate(360deg);
+}
+/*# sourceMappingURL=style.css.map */
