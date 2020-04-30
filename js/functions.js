@@ -102,10 +102,29 @@ function getResult(player, computer) {
     }
 }
 
-let button = document.getElementById('restart-button');
-button.addEventListener('click', function(e){
+function gameRestart() {
     event.preventDefault();
     clearMessages();
+    gameState=0;
     document.getElementById('restart').style.display = 'none';
     document.getElementById('buttons').style.display = 'block';
-});
+}
+
+let gameState=0;
+document.addEventListener('keydown', logKey);
+function logKey(e) {
+    if (e.code == 'Digit1' && gameState==0) {
+        gameState=1;
+        playGame('stone');
+    } else if (e.code == "Digit2" && gameState==0) {
+        gameState=1;
+        playGame('paper');
+    } else if (e.code == "Digit3" && gameState==0) {
+        gameState=1;
+        playGame('scissors');
+    } else if (e.code == "KeyR" && gameState==1) {
+        gameRestart();
+    } else {
+    }
+    
+}
