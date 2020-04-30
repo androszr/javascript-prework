@@ -113,18 +113,22 @@ function gameRestart() {
 let gameState=0;
 document.addEventListener('keydown', logKey);
 function logKey(e) {
-    if (e.code == 'Digit1' && gameState==0) {
-        gameState=1;
-        playGame('stone');
-    } else if (e.code == "Digit2" && gameState==0) {
-        gameState=1;
-        playGame('paper');
-    } else if (e.code == "Digit3" && gameState==0) {
-        gameState=1;
-        playGame('scissors');
-    } else if (e.code == "KeyR" && gameState==1) {
-        gameRestart();
-    } else {
+
+    switch(e.code) {
+        case 'Digit1':
+            playGame('stone');
+            gameState=1;
+            break;
+        case 'Digit2':
+            playGame('paper');
+            gameState=1;
+            break;
+        case 'Digit3':
+            playGame('scissors');
+            gameState=1;
+            break;
+        case 'KeyR':
+            gameRestart();
     }
     
 }
