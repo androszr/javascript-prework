@@ -4,3 +4,7 @@ gameOptions.forEach(el => el.addEventListener('click', event => {
   playGame(el.id);
 }));
 
+let button = document.getElementById('restart-button');
+button.addEventListener('click', function(){
+    gameRestart();
+});
