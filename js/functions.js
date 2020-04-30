@@ -8,6 +8,9 @@ function clearMessages(){
 	document.getElementById('messages').innerHTML = '';
 }
 
+let playerScore = 0;
+let computerScore = 0;
+
 function playGame(player){
     let computer = getRandomMove();
     let result = getResult(player, computer);
@@ -18,8 +21,12 @@ function playGame(player){
     if (result == 0) {
         printMessage('<p>Mamy remis! Zagraj jeszcze raz.</p>');
     } else if (result == 1) {
+        playerScore++;
+        document.getElementById('result-player').innerHTML = playerScore;
         printMessage('<h1><strong>Wygrywasz!</strong></h1>');
     } else if (result == 2) {
+        computerScore++;
+        document.getElementById('result-computer').innerHTML = computerScore;
         printMessage('<p>Wygrywa komputer. Próbuj dalej!</p>');
     } else if (result == 99) {
         printMessage('Błąd gry! Spróbuj ponownie.');

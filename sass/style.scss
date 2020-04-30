@@ -32,7 +32,7 @@ h1 {
 .splash {
     max-width: 500px;
     margin: 0 auto;
-    min-height: 60vh;
+    min-height: 500px;
     background-color: $color-dark;
     color: $color-light;
     text-align: center;
@@ -43,13 +43,14 @@ h1 {
         0 0 0 10px hsl(0, 0%, 80%),
         0 0 0 15px hsl(0, 0%, 90%);
     border-radius: 0px;
+    position: relative;
     
 
     .splash-header {
         margin: 50px auto;
         width: 90%;
-        height: 10vh;   
-        position: relative;
+        height: 100px;  
+        
         #img-header {
             display: block;
             margin-left: auto;
@@ -60,6 +61,7 @@ h1 {
     }
     .splash-content {
         margin-top: 20px;
+        position: relative;
         p {
             margin-bottom: 10px;
         }
@@ -103,6 +105,12 @@ h1 {
             
         }
         
+    }
+    #result {
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
     
