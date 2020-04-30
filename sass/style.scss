@@ -37,18 +37,14 @@ h1 {
     color: $color-light;
     text-align: center;
     padding-top: 10px;
-    box-shadow: 0 8px 6px -6px black;
-    border-radius: 10px;
-    transition: border-radius 0.5s, border 2s, outline 2s, box-shadow 2s;
-        &:hover {
-            border: 5px solid hsl(0, 0%, 40%);
-            outline: 5px solid hsl(0, 0%, 60%);
-            box-shadow:
-                0 0 0 10px hsl(0, 0%, 80%),
-                0 0 0 15px hsl(0, 0%, 90%);
-            border-radius: 0px;
-        }
-        
+    border: 5px solid hsl(0, 0%, 40%);
+    outline: 5px solid hsl(0, 0%, 60%);
+    box-shadow:
+        0 0 0 10px hsl(0, 0%, 80%),
+        0 0 0 15px hsl(0, 0%, 90%);
+    border-radius: 0px;
+    
+
     .splash-header {
         margin: 50px auto;
         width: 90%;

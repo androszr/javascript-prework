@@ -9,13 +9,19 @@ function clearMessages(){
 }
 
 function playGame(player){
-    let computer = getRandomNumber();
+    let computer = getRandomMove();
     let result = getResult(player, computer);
+    player = translateValue(player);
+    computer = translateValue(computer);
     document.getElementById('buttons').style.display = 'none';
     printMessage('<p>Ty zagrałeś <strong>' + player + '</strong></p> <p>Komputer zagrał <strong>' + computer + '</strong></p>'); 
-    if (result == 'remis') {
+    if (result == 0) {
         printMessage('<p>Mamy remis! Zagraj jeszcze raz.</p>');
-    } else if (result == 'error') {
+    } else if (result == 1) {
+        printMessage('<h1><strong>Wygrywasz!</strong></h1>');
+    } else if (result == 2) {
+        printMessage('<p>Wygrywa komputer. Próbuj dalej!</p>');
+    } else if (result == 99) {
         printMessage('Błąd gry! Spróbuj ponownie.');
     } else {
         printMessage('<h1>Wygrywa <strong>' + result + '!</strong></h1>');
@@ -23,81 +29,74 @@ function playGame(player){
 
 };
 
-function assignValue(gameInput) {
-    if (gameInput==1) {
+
+
+
+function translateValue(gameInput) {
+    if (gameInput=='stone') {
         return 'kamień';
-    } else if (gameInput==2) {
+    } else if (gameInput=='paper') {
         return 'papier';
-    } else if (gameInput==3) {
-        return 'nożyce';
+    } else if (gameInput=='scissors') {
+        return 'nożyczki';
     } else {
-        return 'error';
+        return 99;
     }
 }
 
-function getRandomNumber() {
-    let randomNumber = Math.floor(Math.random() * (3 - 1 + 1)) + 1;    
-    return assignValue(randomNumber);
+function getRandomMove() {
+    let randomNumber = Math.floor(Math.random() * (3 - 1 + 1)) + 1;  
+    if (randomNumber==1) {
+        return 'stone';
+    } else if (randomNumber==2) {
+        return 'paper';
+    } else if (randomNumber==3) {
+        return 'scissors';
+    } else {
+        return 99;
+    }  
 }
-
-    /*
-    function getPlayerNumber() {
-    let msg = '';
-    let playerInput = '';
-    while (playerInput !== '1' && playerInput !== '2' && playerInput !== '3') {
-        if (playerInput=='') {
-            msg ='Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.';
-        } else {
-            alert('Błędnie wpisany ruch! Wpisano: ' + playerInput + '.');
-            msg='Spróbuj ponownie 1: kamień, 2: papier, 3: nożyce.'
-        };
-       playerInput = prompt(msg);
-    }
-    return(assignValue(playerInput)); 
-    }
-    */
-
 
 function getResult(player, computer) {
     document.getElementById('restart').style.display = 'block';
-    if (player == 'kamień') {
-        if (computer == 'kamień') {
-            return 'remis';
-        } else if (computer == 'papier') {
-            return 'Komputer';
-        } else if (computer == 'nożyce') {
-            return 'Gracz';
+    if (player == 'stone') {
+        if (computer == 'stone') {
+            return 0;
+        } else if (computer == 'paper') {
+            return 2;
+        } else if (computer == 'scissors') {
+            return 1;
         } else {
-            return 'error';
+            return 99;
         }
-    } else if (player == 'papier') {
-        if (computer == 'kamień') {
-            return 'Gracz';
-        } else if (computer == 'papier') {
-            return 'remis';
-        } else if (computer == 'nożyce') {
-            return 'Komputer';
+    } else if (player == 'paper') {
+        if (computer == 'stone') {
+            return 1;
+        } else if (computer == 'paper') {
+            return 0;
+        } else if (computer == 'scissors') {
+            return 2;
         } else {
-            return 'error';
+            return 99;
         }
 
-    } else if (player == 'nożyce') {
-        if (computer == 'kamień') {
-            return 'Komputer';
-        } else if (computer == 'papier') {
-            return 'Gracz';
-        } else if (computer == 'nożyce') {
-            return 'remis';
+    } else if (player == 'scissors') {
+        if (computer == 'stone') {
+            return 2;
+        } else if (computer == 'paper') {
+            return 1;
+        } else if (computer == 'scissors') {
+            return 0;
         } else {
-            return 'error';
+            return 99;
         }
     } else {
-        return 'error';
+        return 99;
     }
 }
 
 let button = document.getElementById('restart-button');
-button.addEventListener('click',function(e){
+button.addEventListener('click', function(e){
     event.preventDefault();
     clearMessages();
     document.getElementById('restart').style.display = 'none';

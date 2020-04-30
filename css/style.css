@@ -28,12 +28,6 @@ h1 {
   color: #FFFFFF;
   text-align: center;
   padding-top: 10px;
-  box-shadow: 0 8px 6px -6px black;
-  border-radius: 10px;
-  transition: border-radius 0.5s, border 2s, outline 2s, box-shadow 2s;
-}
-
-.splash:hover {
   border: 5px solid #666666;
   outline: 5px solid #999999;
   box-shadow: 0 0 0 10px #cccccc, 0 0 0 15px #e6e6e6;
