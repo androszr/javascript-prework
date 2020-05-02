@@ -1,10 +1,8 @@
 const gameOptions = document.querySelectorAll('.play-button');
 gameOptions.forEach(el => el.addEventListener('click', event => {
-  console.log(el.id);
+  gameState=1;
   playGame(el.id);
 }));
 
-let button = document.getElementById('restart-button');
-button.addEventListener('click', function(){
-    gameRestart();
-});
+const button = document.getElementById('restart-button');
+button.addEventListener('click', gameRestart);
