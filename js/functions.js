@@ -88,12 +88,11 @@ function playGame(player){
 
 
 function translateValue(gameInput) {
-    try {
+    if(gameInput) {
         return translate[gameInput];
+    } else {
+        throw('game input not defined');
     }
-    catch(error) {
-        console.log(error);
-    } 
 }
 
 function getRandomMove() {

@@ -44,58 +44,58 @@ h1 {
   margin-bottom: 10px;
 }
 
-.splash .splash-content #buttons {
+.splash .splash-content .buttons {
   text-align: center;
   width: 90%;
   margin: 0 auto;
   margin-bottom: 20px;
 }
 
-.splash .splash-content #buttons a {
+.splash .splash-content .buttons a {
   color: #FFFFFF;
   text-decoration: none;
   font-size: 20px;
 }
 
-.splash .splash-content #buttons a i {
+.splash .splash-content .buttons a i {
   display: block;
   margin-bottom: 5px;
   color: #FED136;
 }
 
-.splash .splash-content #buttons .row {
+.splash .splash-content .buttons .row {
   margin-top: 40px;
 }
 
-.splash .splash-content #restart {
+.splash .splash-content .restart {
   margin-top: 50px;
 }
 
-.splash .splash-content #restart a {
+.splash .splash-content .restart a {
   color: #FFFFFF;
   text-decoration: none;
   font-size: 20px;
 }
 
-.splash .splash-content #restart a i {
+.splash .splash-content .restart a i {
   margin-bottom: 10px;
   display: block;
   transition: transform .8s ease-in-out;
   color: #FED136;
 }
 
-.splash .splash-content #restart a i:hover {
+.splash .splash-content .restart a i:hover {
   transform: rotate(360deg);
 }
 
-.splash #result {
+.splash .result {
   position: absolute;
   bottom: 5%;
   left: 50%;
   transform: translateX(-50%);
 }
 
-#header-photo {
+.splash-header {
   margin: 20px auto;
   /*
     background-image: radial-gradient(circle closest-side at 45% 75%,$color-one, transparent 10%), url('../images/background-3.png');
@@ -110,7 +110,7 @@ h1 {
   width: 100%;
 }
 
-#cheat-wrapper {
+.cheat-wrapper {
   color: #000000;
   font-size: 16px;
   text-align: center;
@@ -127,25 +127,25 @@ h1 {
   transition: left 1s;
 }
 
-#cheat-wrapper:hover {
+.cheat-wrapper:hover {
   left: 0px;
 }
 
-#cheat-wrapper i {
+.cheat-wrapper i {
   font-size: 40px;
   margin-bottom: 10px;
 }
 
-#cheat-wrapper p {
+.cheat-wrapper p {
   margin-bottom: 10px;
 }
 
-#cheat-wrapper a {
+.cheat-wrapper a {
   text-decoration: none;
   color: #000000;
 }
 
-#cheat-wrapper .wrapper-header {
+.cheat-wrapper .wrapper-header {
   font-size: 12px;
   font-weight: bold;
   -ms-writing-mode: tb-rl;
