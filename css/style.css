@@ -35,20 +35,6 @@ h1 {
   position: relative;
 }
 
-.splash .splash-header {
-  margin: 50px auto;
-  width: 90%;
-  height: 100px;
-}
-
-.splash .splash-header #img-header {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-height: 80%;
-  max-width: 100%;
-}
-
 .splash .splash-content {
   margin-top: 20px;
   position: relative;
@@ -107,5 +93,178 @@ h1 {
   bottom: 5%;
   left: 50%;
   transform: translateX(-50%);
+}
+
+#header-photo {
+  margin: 20px auto;
+  /*
+    background-image: radial-gradient(circle closest-side at 45% 75%,$color-one, transparent 10%), url('../images/background-3.png');
+    background-image: radial-gradient(circle closest-side at 42% 30%,$color-one, transparent 10%), url('../images/background-3.png');
+    background-image: radial-gradient(circle closest-side at 54% 35%,$color-one, transparent 10%), url('../images/background-3.png');
+    */
+  background-image: url("../images/background-3.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 100%;
+}
+
+#cheat-wrapper {
+  color: #000000;
+  font-size: 16px;
+  text-align: center;
+  background-color: #FED136;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: fixed;
+  width: 160px;
+  top: 10%;
+  transform: translateY(-10%);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  left: -120px;
+  cursor: pointer;
+  transition: left 1s;
+}
+
+#cheat-wrapper:hover {
+  left: 0px;
+}
+
+#cheat-wrapper i {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+#cheat-wrapper p {
+  margin-bottom: 10px;
+}
+
+#cheat-wrapper a {
+  text-decoration: none;
+  color: #000000;
+}
+
+#cheat-wrapper .wrapper-header {
+  font-size: 12px;
+  font-weight: bold;
+  -ms-writing-mode: tb-rl;
+      writing-mode: vertical-rl;
+  text-orientation: upright;
+  text-transform: uppercase;
+}
+
+.switch-checkbox {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+}
+
+.switch-checkbox .switch {
+  cursor: pointer;
+}
+
+.switch-checkbox .switch input {
+  display: none;
+}
+
+.switch-checkbox .switch input + span {
+  width: 48px;
+  height: 28px;
+  border-radius: 14px;
+  transition: all .3s ease;
+  display: block;
+  position: relative;
+  background: #FF4651;
+  box-shadow: 0 8px 16px -1px rgba(255, 70, 81, 0.2);
+}
+
+.switch-checkbox .switch input + span:before, .switch-checkbox .switch input + span:after {
+  content: '';
+  display: block;
+  position: absolute;
+  transition: all .3s ease;
+}
+
+.switch-checkbox .switch input + span:before {
+  top: 5px;
+  left: 5px;
+  width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  border: 5px solid #fff;
+}
+
+.switch-checkbox .switch input + span:after {
+  top: 5px;
+  left: 32px;
+  width: 6px;
+  height: 18px;
+  border-radius: 40%;
+  transform-origin: 50% 50%;
+  background: #fff;
+  opacity: 0;
+}
+
+.switch-checkbox .switch input + span:active {
+  transform: scale(0.92);
+}
+
+.switch-checkbox .switch input:checked + span {
+  background: #48EA8B;
+  box-shadow: 0 8px 16px -1px rgba(72, 234, 139, 0.2);
+}
+
+.switch-checkbox .switch input:checked + span:before {
+  width: 0px;
+  border-radius: 3px;
+  margin-left: 27px;
+  border-width: 3px;
+  background: #fff;
+}
+
+.switch-checkbox .switch input:checked + span:after {
+  animation: blobChecked .35s linear forwards .2s;
+}
+
+.switch-checkbox .switch input:not(:checked) + span:before {
+  animation: blob .85s linear forwards .2s;
+}
+
+@keyframes blob {
+  0%, 100% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.12, 0.94);
+  }
+  60% {
+    transform: scale(0.96, 1.06);
+  }
+}
+
+@keyframes blobChecked {
+  0% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  30% {
+    transform: scaleX(1.44);
+  }
+  70% {
+    transform: scaleX(1.18);
+  }
+  50%,
+  99% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 0;
+  }
 }
 /*# sourceMappingURL=style.css.map */

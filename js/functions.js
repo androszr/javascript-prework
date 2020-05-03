@@ -8,6 +8,37 @@ const translate = {
     scissors: 'nożyczki'
 }
 
+const checkBox = document.getElementById("cheat-toggle");
+checkBox.addEventListener( 'change', function() {
+    computer = getRandomMove();
+    toggleCheat();
+});
+
+let computer = getRandomMove();
+toggleCheat();
+
+function toggleCheat() {
+    if (checkBox.checked == true) {
+        cheatMode(computer);
+    } else { 
+        document.getElementById('header-photo').style.backgroundImage = "url('../images/background-3.png')"; 
+    }
+}
+
+function cheatMode(computer) {
+    switch(computer) {
+        case Object.keys(translate)[0]:
+            document.getElementById('header-photo').style.backgroundImage = "url('../images/background-paper.png')";
+            break;
+        case Object.keys(translate)[1]:
+            document.getElementById('header-photo').style.backgroundImage = "url('../images/background-scissors.png')";
+            break;
+        case Object.keys(translate)[2]:
+            document.getElementById('header-photo').style.backgroundImage = "url('../images/background-stone.png')";
+            break;
+    }
+}
+
 function printMessage(msg){
 	let div = document.createElement('div');
 	div.innerHTML = msg;
@@ -20,7 +51,6 @@ function clearMessages(){
 
 
 function playGame(player){
-    let computer = getRandomMove();
     let result = getResult(player, computer);
     player = translateValue(player);
     computer = translateValue(computer);
@@ -115,6 +145,8 @@ function gameRestart() {
     gameState=0;
     document.getElementById('restart').style.display = 'none';
     document.getElementById('buttons').style.display = 'block';
+    computer = getRandomMove();
+    toggleCheat()
 }
 
 
