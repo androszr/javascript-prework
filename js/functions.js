@@ -2,10 +2,16 @@ let playerScore = 0;
 let computerScore = 0;
 let gameState = 0;
 
-const translate = {
+const translatePL = {
     stone: 'kamień',
     paper: 'papier',
     scissors: 'nożyczki'
+}
+
+const gameOptionsEN = {
+    stone: 'stone',
+    paper: 'paper',
+    scissors: 'scissors'
 }
 
 const checkBox = document.getElementById("cheat-toggle");
@@ -27,13 +33,13 @@ function toggleCheat() {
 
 function cheatMode(computer) {
     switch(computer) {
-        case Object.keys(translate)[0]:
+        case gameOptionsEN.stone:
             document.getElementById('header-photo').style.backgroundImage = "url('../images/background-paper.png')";
             break;
-        case Object.keys(translate)[1]:
+        case gameOptionsEN.paper:
             document.getElementById('header-photo').style.backgroundImage = "url('../images/background-scissors.png')";
             break;
-        case Object.keys(translate)[2]:
+        case gameOptionsEN.scissors:
             document.getElementById('header-photo').style.backgroundImage = "url('../images/background-stone.png')";
             break;
         default:
@@ -89,7 +95,7 @@ function playGame(player){
 
 function translateValue(gameInput) {
     if(gameInput) {
-        return translate[gameInput];
+        return translatePL[gameInput];
     } else {
         throw('game input not defined');
     }
@@ -100,11 +106,11 @@ function getRandomMove() {
     
     switch(randomNumber) {
         case 1:
-            return Object.keys(translate)[0];
+            return gameOptionsEN.stone;
         case 2:
-            return Object.keys(translate)[1];
+            return gameOptionsEN.paper;
         case 3:
-            return Object.keys(translate)[2];
+            return gameOptionsEN.scissors;
         default:
             console.log('Unable to generate random number code:' + randomNumber);
             break;
@@ -117,36 +123,36 @@ function getResult(player, computer) {
     try {
         document.getElementById('restart').style.display = 'block';  
         switch(player) {
-            case Object.keys(translate)[0]:
+            case gameOptionsEN.stone:
                 switch(computer) {
-                    case Object.keys(translate)[0]:
+                    case gameOptionsEN.stone:
                         return 0;
-                    case Object.keys(translate)[1]:
+                    case gameOptionsEN.paper:
                         return 2;
-                    case Object.keys(translate)[2]:
+                    case gameOptionsEN.scissors:
                         return 1;
                 }
-            case Object.keys(translate)[1]:
+            case gameOptionsEN.paper:
                 switch(computer) {
-                    case Object.keys(translate)[0]:
+                    case gameOptionsEN.stone:
                         return 1;
     
-                    case Object.keys(translate)[1]:
+                    case gameOptionsEN.paper:
                         return 0;
     
-                    case Object.keys(translate)[2]:
+                    case gameOptionsEN.scissors:
                         return 2
                 }
     
-            case Object.keys(translate)[2]:
+            case gameOptionsEN.scissors:
                 switch(computer) {
-                    case Object.keys(translate)[0]:
+                    case gameOptionsEN.stone:
                         return 2;
     
-                    case Object.keys(translate)[1]:
+                    case gameOptionsEN.paper:
                         return 1;
     
-                    case Object.keys(translate)[2]:
+                    case gameOptionsEN.scissors:
                         return 0;
                 }
         }
@@ -178,15 +184,15 @@ function logKey(e) {
         } else {
             switch(e.which) {
                 case 49:
-                    playGame(Object.keys(translate)[0]);
+                    playGame(gameOptionsEN.stone);
                     gameState=1;
                     break;
                 case 50:
-                    playGame(Object.keys(translate)[1]);
+                    playGame(gameOptionsEN.paper);
                     gameState=1;
                     break;
                 case 51:
-                    playGame(Object.keys(translate)[2]);
+                    playGame(gameOptionsEN.scissors);
                     gameState=1;
                     break;
             }
