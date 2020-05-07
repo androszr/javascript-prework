@@ -14,16 +14,28 @@ const gameOptionsEN = {
     scissors: 'scissors'
 }
 
+const getRandomMove = function() {
+    const randomNumber = Math.floor(Math.random() * (3 - 1 + 1)) + 1;   
+    switch(randomNumber) {
+        case 1:
+            return gameOptionsEN.stone;
+        case 2:
+            return gameOptionsEN.paper;
+        case 3:
+            return gameOptionsEN.scissors;
+        default:
+            console.log('Unable to generate random number code:' + randomNumber);
+            break;
+    }   
+}
+
 const checkBox = document.getElementById("cheat-toggle");
 checkBox.addEventListener( 'change', function() {
     computer = getRandomMove();
     toggleCheat();
 });
 
-let computer = getRandomMove();
-toggleCheat();
-
-function toggleCheat() {
+const toggleCheat = function() {
     if (checkBox.checked == true) {
         cheatMode(computer);
     } else { 
@@ -31,7 +43,10 @@ function toggleCheat() {
     }
 }
 
-function cheatMode(computer) {
+let computer = getRandomMove();
+toggleCheat();
+
+const cheatMode = function(computer) {
     switch(computer) {
         case gameOptionsEN.stone:
             document.getElementById('header-photo').style.backgroundImage = "url('../images/background-paper.png')";
@@ -48,21 +63,21 @@ function cheatMode(computer) {
     }
 }
 
-function printMessage(msg){
-	let div = document.createElement('div');
+const printMessage = function(msg){
+	const div = document.createElement('div');
 	div.innerHTML = msg;
 	document.getElementById('messages').appendChild(div);
 }
 
-function clearMessages(){
+const clearMessages = function(){
 	document.getElementById('messages').innerHTML = '';
 }
 
 
-function playGame(player){
-
+const playGame = function(player){
     try {
-        let result = getResult(player, computer);
+        gameState = 1;
+        const result = getResult(player, computer);
         player = translateValue(player);
         computer = translateValue(computer);
         document.getElementById('buttons').style.display = 'none';
@@ -91,9 +106,7 @@ function playGame(player){
     } 
 };
 
-
-
-function translateValue(gameInput) {
+const translateValue = function(gameInput) {
     if(gameInput) {
         return translatePL[gameInput];
     } else {
@@ -101,24 +114,7 @@ function translateValue(gameInput) {
     }
 }
 
-function getRandomMove() {
-    const randomNumber = Math.floor(Math.random() * (3 - 1 + 1)) + 1; 
-    
-    switch(randomNumber) {
-        case 1:
-            return gameOptionsEN.stone;
-        case 2:
-            return gameOptionsEN.paper;
-        case 3:
-            return gameOptionsEN.scissors;
-        default:
-            console.log('Unable to generate random number code:' + randomNumber);
-            break;
-    }
-    
-}
-
-function getResult(player, computer) {
+const getResult = function(player, computer) {
     
     try {
         document.getElementById('restart').style.display = 'block';  
@@ -162,7 +158,7 @@ function getResult(player, computer) {
     }   
 }
 
-function gameRestart() {
+const gameRestart =  function() {
     event.preventDefault();
     clearMessages();
     gameState=0;
@@ -172,9 +168,7 @@ function gameRestart() {
     toggleCheat()
 }
 
-
-document.addEventListener('keydown', logKey);
-function logKey(e) {
+const logKey = function(e) {
     try {
         if (gameState == 1) {
             switch(e.which) {
@@ -202,3 +196,5 @@ function logKey(e) {
         console.log(error);
     } 
 }
+
+document.addEventListener('keydown', logKey);
